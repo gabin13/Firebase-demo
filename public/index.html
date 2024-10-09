@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="bundle.js"></script>
+</head>
+<body>
+    <h1>Factures</h1>
+    <form id="addFacture" action="">
+        <div>
+            <label for="number">Numéro</label>
+            <input type="text"
+            name="number" 
+            id="number" 
+            placeholder="Entrez le numéro de la facture"
+            required />
+        </div>
+        <div>
+            <label for="status">Statut</label>
+            <select 
+                name="status" 
+                id="status"
+                required
+            >
+            <option value="">Choisissez un statut</option>
+            <option value="A payer">A payer</option>
+            <option value="Payé">Payé</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Enregistrer</button>
+        </div>
+    </form>
+
+    <h2>Liste des Factures</h2>
+    <table id="facturesTable" border="1">
+        <thead>
+            <tr>
+                <th>Numéro</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="facturesBody">
+        </tbody>
+    </table>
+
+    <!-- Modal for Editing Facture -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Modifier Facture</h2>
+            <div>
+                <label for="editNumber">Numéro</label>
+                <input type="text" id="editNumber" placeholder="Numéro de facture" required />
+            </div>
+            <div>
+                <label for="editStatus">Statut</label>
+                <select id="editStatus" required>
+                    <option value="A payer">A payer</option>
+                    <option value="Payé">Payé</option>
+                </select>
+            </div>
+            <button id="saveChanges">Sauvegarder les modifications</button>
+        </div>
+    </div>
+</body>
+</html>
